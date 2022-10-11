@@ -1,0 +1,26 @@
+{
+  // eslint
+  "editor.codeActionsOnSave": {
+    "source.fixAll": false,
+    "source.organizeImports": false
+  },
+
+  // formatting
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": false,
+  "editor.autoIndent": "advanced",
+  "editor.tabSize": 2,
+  "editor.detectIndentation": true,
+  "editor.rulers": [80, 120],
+  "editor.wordWrap": "off",
+  "editor.tabCompletion": "on",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // others
+  "files.defaultLanguage": "typescript",
+  "extensions.ignoreRecommendations": false,
+  "files.eol": "\n",
+
+  "jest.rootPath": "."
+}
