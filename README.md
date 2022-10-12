@@ -26,13 +26,15 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## Installation
+## Get started
 
-```bash
-$ npm install
-```
+You just need to have [Docker](https://docs.docker.com/engine/install/) and [VSCode](https://code.visualstudio.com/Download) installed.
 
-## Running the app
+Open the project in Dev Container and press F5 to run the project.
+
+That's all!
+
+## Running the app via CLI
 
 ```bash
 # development
@@ -58,16 +60,7 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
 ## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+- Author - [Plinio Naves](https://github.com/plinionaves)
+- Twitter - [@plinionaves](https://twitter.com/plinionaves)
