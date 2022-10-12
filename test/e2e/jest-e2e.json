@@ -1,8 +1,8 @@
 {
   "moduleFileExtensions": ["js", "json", "ts"],
   "moduleNameMapper": {
-    "@/test/(.*)": "<rootDir>/test/$1",
-    "@/(.*)": "<rootDir>/src/$1"
+    "@/test/(.*)": "<rootDir>/../$1",
+    "@/(.*)": "<rootDir>/../../src/$1"
   },
   "rootDir": ".",
   "testEnvironment": "node",
