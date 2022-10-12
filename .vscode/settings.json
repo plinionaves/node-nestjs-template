@@ -21,6 +21,6 @@
   "files.defaultLanguage": "typescript",
   "extensions.ignoreRecommendations": false,
   "files.eol": "\n",
-
+  "conventionalCommits.lineBreak": "\n",
   "jest.rootPath": "."
 }

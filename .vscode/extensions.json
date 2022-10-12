@@ -1,9 +1,9 @@
 {
   "recommendations": [
     "HookyQR.beautify",
-		"eamodio.gitlens",
-		"hashicorp.terraform",
-		"streetsidesoftware.code-spell-checker",
+    "eamodio.gitlens",
+    "hashicorp.terraform",
+    "streetsidesoftware.code-spell-checker",
     "donjayamanne.githistory",
     "dbaeumer.vscode-eslint",
     "editorconfig.editorconfig",
@@ -12,6 +12,7 @@
     "orta.vscode-jest",
     "ms-vscode.js-debug",
     "ms-azuretools.vscode-docker",
-    "ms-vscode-remote.remote-containers"
+    "ms-vscode-remote.vscode-remote-extensionpack",
+    "vivaxy.vscode-conventional-commits"
   ]
 }

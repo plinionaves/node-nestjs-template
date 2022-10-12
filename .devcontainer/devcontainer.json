@@ -26,7 +26,8 @@
     "vscode": {
       // Set *default* container specific settings.json values on container create.
       "settings": {
-        "terminal.integrated.defaultProfile.linux": "bash"
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "conventionalCommits.lineBreak": "\n"
       }
     }
   },
@@ -45,7 +46,8 @@
     "orta.vscode-jest",
     "ms-vscode.js-debug",
     "ms-azuretools.vscode-docker",
-    "ms-vscode-remote.remote-containers"
+    "ms-vscode-remote.vscode-remote-extensionpack",
+    "vivaxy.vscode-conventional-commits"
   ],
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
