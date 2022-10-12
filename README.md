@@ -28,9 +28,19 @@
 
 ## Get started
 
-You just need to have [Docker](https://docs.docker.com/engine/install/) and [VSCode](https://code.visualstudio.com/Download) installed.
+Follow these steps:
 
-Open the project in Dev Container and press F5 to run the project.
+1. Clone the repo
+
+```bash
+git clone git@github.com:plinionaves/node-nestjs-template.git
+```
+
+2. Find and replace all occurrences of `node-api` to the name of your preference. Ex: credit-api
+
+3. Install [VSCode](https://code.visualstudio.com/Download) and [Docker](https://docs.docker.com/engine/install/) (if you haven't already).
+
+4. Open the project in Dev Container and press F5 to run it.
 
 That's all!
 
