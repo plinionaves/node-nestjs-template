@@ -7,4 +7,4 @@ services:
       target: development
     container_name: node-api
     volumes:
-      - .:/app
+      - .:/usr/app

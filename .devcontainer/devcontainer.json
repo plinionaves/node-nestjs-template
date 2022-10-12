@@ -6,13 +6,17 @@
 
   // Update the 'dockerComposeFile' list if you have more compose files or use different names.
   // The .devcontainer/docker-compose.yml file contains any overrides you need/want to make.
-  "dockerComposeFile": ["../docker-compose.yaml", "docker-compose.yaml"],
+  "dockerComposeFile": [
+    "../docker-compose.yaml",
+    "../docker-compose.override.yaml",
+    "docker-compose.yaml"
+  ],
 
   // The 'service' property is the name of the service for the container that VS Code should
   // use. Update this value and .devcontainer/docker-compose.yml to the real service name.
   "service": "app",
 
-  "workspaceFolder": "/app",
+  "workspaceFolder": "/usr/app",
 
   // The optional 'workspaceFolder' property is the path VS Code should open by default when
   // connected. This is typically a file mount in .devcontainer/docker-compose.yml
@@ -20,16 +24,10 @@
 
   "shutdownAction": "stopCompose",
 
-  // Configure tool-specific properties.
-  "customizations": {
-    // Configure properties specific to VS Code.
-    "vscode": {
-      // Set *default* container specific settings.json values on container create.
-      "settings": {
-        "terminal.integrated.defaultProfile.linux": "bash",
-        "conventionalCommits.lineBreak": "\n"
-      }
-    }
+  // Set *default* container specific settings.json values on container create.
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "conventionalCommits.lineBreak": "\n"
   },
 
   // Add the IDs of extensions you want installed when the container is created.
