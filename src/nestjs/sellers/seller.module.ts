@@ -1,4 +1,4 @@
-import { SellerPostgres } from '@/seller/infra/db/seller-postgres';
+import { SellerPostgres } from '@/seller/infra/db';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { SellerController } from './seller.controller';
