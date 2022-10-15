@@ -1,30 +1,48 @@
+import { uuid } from '@/core/domain/adapters';
+import { ValidationError } from '@/core/domain/errors';
 import { TaxId } from '@/core/domain/interfaces';
+import { someValueObjectIsInvalid } from '@/core/domain/utils';
+import { createTaxId, createUUID } from '@/core/domain/value-objects';
 
 interface SellerEntityProps {
   uuid?: string;
+  name?: string;
   taxId: TaxId;
-  qualified: boolean;
-  lastQualificationDate: Date;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
 export class SellerEntity {
-  constructor(private readonly props: SellerEntityProps) {
-    if (!this.props.uuid) {
-      this.props.uuid = 'uuidv4';
-    }
+  uuid: string;
+  taxId: TaxId;
+  name: string | null;
+  createdAt: Date;
+  updatedAt: Date | null;
 
+  constructor(props: SellerEntityProps) {
+    this.init(props);
     this.validate();
   }
 
+  private init(props: SellerEntityProps) {
+    this.uuid = props.uuid ?? uuid.create();
+    this.taxId = props.taxId;
+    this.name = props.name ?? null;
+    this.createdAt = props.createdAt ?? new Date();
+    this.updatedAt = props.updatedAt ?? null;
+  }
+
   private validate() {
-    throw new Error('test error');
-  }
+    const uuid = createUUID(this.uuid);
+    const taxId = createTaxId(this.taxId);
 
-  get uuid() {
-    return this.props.uuid;
-  }
+    if (someValueObjectIsInvalid([uuid, taxId])) {
+      throw new ValidationError('errors.validation.seller_entity', {
+        uuid: uuid.errors,
+        taxId: taxId.errors,
+      });
+    }
 
-  get taxId() {
-    return this.props.taxId;
+    this.taxId.value = taxId.value.value;
   }
 }
