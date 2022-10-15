@@ -8,6 +8,7 @@ import {
 import { TaxIdType } from '@/core/domain/enums';
 import { SellerEntity } from '@/seller/domain/entities';
 import { SellerRepository } from '@/seller/application/protocols';
+import { NotFoundError } from '@/core/domain/errors/not-found-error';
 
 @Entity({ name: 'sellers' })
 export class SellerPostgres {
@@ -54,5 +55,26 @@ export class SellerPostgresRepository implements SellerRepository {
     seller.updatedAt = sellerEntity.updatedAt;
 
     await this.repository.save(seller);
+  }
+
+  async get(uuid: string): Promise<SellerEntity> {
+    const sellerDb = await this.repository.findOne({ where: { uuid } });
+
+    if (!sellerDb) {
+      throw new NotFoundError('errors.not_found', { uuid });
+    }
+
+    const sellerEntity = new SellerEntity({
+      taxId: {
+        value: sellerDb.taxId,
+        type: TaxIdType[sellerDb.taxIdType.toUpperCase()],
+      },
+      name: sellerDb.name,
+      uuid: sellerDb.uuid,
+      createdAt: sellerDb.createdAt,
+      updatedAt: sellerDb.updatedAt,
+    });
+
+    return sellerEntity;
   }
 }

@@ -1,5 +1,8 @@
 import { SellerRepository } from '@/seller/application/protocols';
-import { CreateSellerUseCase } from '@/seller/application/usecases';
+import {
+  CreateSellerUseCase,
+  GetSellerUseCase,
+} from '@/seller/application/usecases';
 import { SellerPostgresRepository } from '@/seller/infra/db';
 import { DataSource } from 'typeorm';
 
@@ -18,6 +21,13 @@ const USECASES = {
     provide: CreateSellerUseCase,
     useFactory(sellerRepository: SellerRepository) {
       return new CreateSellerUseCase(sellerRepository);
+    },
+    inject: [SellerPostgresRepository],
+  },
+  GET_SELLER_USECASE: {
+    provide: GetSellerUseCase,
+    useFactory(sellerRepository: SellerRepository) {
+      return new GetSellerUseCase(sellerRepository);
     },
     inject: [SellerPostgresRepository],
   },
